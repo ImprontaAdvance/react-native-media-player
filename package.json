@@ -1,9 +1,17 @@
 {
-  "name": "RCTMediaPlayer",
+  "name": "react-native-media-player",
   "version": "0.0.1",
+  "main": "RCTMediaPlayer.ios.js",
+  "author": "Matteo Manchi <matteo.m@improntaadv.com>",
   "keywords": "react-native",
+  "peerDependencies": {
+    "react-native": ">=0.6.0 <1.0.0"
+  },
   "dependencies": {
-    "react-native": "^0.6.0",
     "react-native-overlay": "^0.2.8"
+  },
+   "repository": {
+    "type": "git",
+    "url": "git@github.com:ImprontaAdvance/react-native-media-player.git"
   }
 }
