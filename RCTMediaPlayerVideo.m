@@ -30,8 +30,15 @@ NSString *const RCTMediaPlayerVideoEndEvent = @"improntaadvance_mediaplayer_vide
 - (void)setSrc:(NSString *)video
 {
     NSString *localPath = [[NSBundle mainBundle] pathForResource:video ofType:@"mp4"];
-    NSURL *localURL = [NSURL fileURLWithPath:localPath];
-    _moviePlayer =  [[MPMoviePlayerController alloc] initWithContentURL:localURL];
+    NSURL *url;
+    
+    if(localPath) {
+        url = [NSURL fileURLWithPath:localPath];
+    } else {
+        url = [NSURL URLWithString:video];
+    }
+
+    _moviePlayer =  [[MPMoviePlayerController alloc] initWithContentURL:url];
     _moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
     _moviePlayer.movieSourceType = MPMovieSourceTypeFile;
     _moviePlayer.shouldAutoplay = YES;
